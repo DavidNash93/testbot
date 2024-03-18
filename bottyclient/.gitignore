@@ -17,6 +17,5 @@ Makefile
 *.exe
 *.out
 *.dll
-*.lib
 *.pdb
 *.ilk
